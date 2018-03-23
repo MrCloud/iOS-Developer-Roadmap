@@ -1,5 +1,5 @@
 ![Header image](headerImage.png)
-# 🚀 iOS Developer Roadmap 
+# 🚀 iOS Developer Roadmap
 Roadmap to becoming an iOS developer in 2018.
 
 ## ☝️ What is it?
@@ -28,7 +28,7 @@ See [this article](https://medium.com/@borlov/c9a24f413457) explaining selection
 
 Start from `Getting started` section if you haven't done any iOS development yet.
 
-## 🗺 Image version 
+## 🗺 Image version
 Roadmap of essential topics. Roadmap for all topics is [here.](RoadmapProject/Script/Generated/ROADMAP.png)
 ![Header image](RoadmapProject/Script/Generated/ESSENTIALROADMAP.png)
 
@@ -39,28 +39,16 @@ Roadmap of essential topics. Roadmap for all topics is [here.](RoadmapProject/Sc
 
 - add new topics to `Content.yml`
 - add missing study materials to `Content.yml`
-- throw ideas at me on [![Twitter: @Bohdan_Orlov](https://img.shields.io/badge/twitter-@Bohdan_Orlov-4d66b3.svg?style=flat)](https://twitter.com/bohdan_orlov)
-
 
 [The complete contribution guide.](HowTo/HOWTOPR.md)
 
 
-## ☑️ TODO
-- [x] content file with topics and materials
-- [x] ability to generate README.md from the content file
-- [x] ability to generate Roadmap tree image from the content file
-- [ ] make generation script less miserable:
-	- [x] make it readable 🤦
-	- [ ] output Yaml format violation errors
-	- [ ] handle errors of parsing Yaml into Topics and Resources
-	- [ ] handle file read/write errors
-	- [ ] handle image generation errors
-- [x] automatic regeneration of roadmap after every commit
-- [ ] automatic validation of content format on PR
-- [ ] make sure Travis doesn't deploy if generation script fails
-
 ## ⚙️ Generation status
-[![Travis](https://travis-ci.org/BohdanOrlov/iOS-Developer-Roadmap.svg?branch=master)](https://travis-ci.org/BohdanOrlov/iOS-Developer-Roadmap)
+[![Travis](https://travis-ci.org/MrCloud/iOS-Developer-Roadmap.svg?branch=master)](https://travis-ci.org/MrCloud/iOS-Developer-Roadmap)
+
+## Attribution
+
+Based on the work of [Bohdan Orlov](https://github.com/BohdanOrlov)
 
 ## 📃 License
 
