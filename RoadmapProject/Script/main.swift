@@ -69,7 +69,7 @@ func parce(children: [Yaml]) -> ([ResourceGroup], [Yaml]) {
 }
 
 func parceTopics(from content: Yaml) -> [Topic] { // Topics parced by non-recursive DFS
-    
+
     var resultTopics = [Topic]()
     var superTopicsByYamlTopic = [Yaml: Topic]()
     var stack: [Yaml] = content.array!
@@ -104,30 +104,30 @@ extension Topic {
         }
         return superTopics
     }
-    
+
     var superTopicNamesFromRoot: [String] {
         let reversedParents: [Topic] = superTopics.reversed()
         let pathComponents = (reversedParents + [self]).map { $0.name }
         return pathComponents
     }
-    
+
     var resourceDirPathInGeneratedDir: String {
         return resourcesDir + "/" + superTopicNamesFromRoot.joined(separator: "/").replacingOccurrences(of: " ", with: "_")
     }
-    
+
     var resourcesPathInGeneratedDir: String {
         return resourceDirPathInGeneratedDir + "/" + resourcesFileName
     }
-    
+
     var resourcesDirPath: String {
         let path = generatedDir + "/" + resourceDirPathInGeneratedDir
         return path
     }
-    
+
     var resourcesPath: String {
         return resourcesDirPath + "/" + resourcesFileName
     }
-    
+
     var resourcesFileName: String {
         return "RESOURCES.md"
     }
@@ -174,7 +174,7 @@ extension Topic: Hashable {
     var hashValue: Int {
         return name.hashValue
     }
-    
+
     static func ==(lhs: Topic, rhs: Topic) -> Bool {
         return lhs === rhs
     }
@@ -222,33 +222,34 @@ func usecaseWithAllias(from topic: Topic, skipAddingEssentialMark: Bool) -> Stri
 }
 
 func skinparam() -> String {
-    let pallete = ["White", "#F5F0F2", "#17468A", "#E12D53", "#17468A"]
+    let pallete = ["White", "#7AC3BA", "#7AC3BA", "White", "#356175", "Black"]
     return """
+    skinparam PackageStyle rect
     skinparam Shadowing false
-    skinparam Padding 0
+    skinparam Padding 1
     skinparam BackgroundColor \(pallete[0])
-    
+
     skinparam Actor {
         BackgroundColor \(pallete[1])
         BorderColor \(pallete[2])
-        FontColor \(pallete[3])
+        FontColor \(pallete[5])
         FontName Helvetica
         FontSize 30
         FontStyle Bold
     }
-    
+
     skinparam Arrow {
         Thickness 3
         Color \(pallete[4])
     }
-    
+
     skinparam usecase {
-        BorderThickness 3
+        BorderThickness 1
         BackgroundColor \(pallete[1])
         BorderColor \(pallete[2])
         FontColor \(pallete[3])
         FontName Helvetica
-        FontStyle Bold
+        FontStyle SemiBold
         FontSize 20
     }
     """
@@ -282,7 +283,7 @@ func generateImage(from topics: [Topic], essentialOnly: Bool) {
     <<^>> - for essential topics
     endlegend
     """
-    
+
     let plantUMLText = """
     @startuml
     left to right direction
@@ -291,9 +292,9 @@ func generateImage(from topics: [Topic], essentialOnly: Bool) {
     \(legend)
     @enduml
     """
-    
+
     let imageName = essentialOnly ? "ESSENTIALROADMAP" : "ROADMAP"
-    
+
     let path = generatedDir + "/" + imageName + ".txt"
     let excistingRoadmapText = try? String(contentsOfFile: path)
     guard plantUMLText != excistingRoadmapText else {

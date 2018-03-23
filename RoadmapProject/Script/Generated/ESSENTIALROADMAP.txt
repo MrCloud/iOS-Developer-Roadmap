@@ -160,14 +160,15 @@ You -|> (iOS Developer)
 (iOS Developer->Computer Science knowledge->Abstract Data Types) -up-> (iOS Developer->Computer Science knowledge->Abstract Data Types->Queue)
 (iOS Developer->Computer Science knowledge) -up-> (iOS Developer->Computer Science knowledge->System design)
 
+skinparam PackageStyle rect
 skinparam Shadowing false
-skinparam Padding 0
+skinparam Padding 1
 skinparam BackgroundColor White
 
 skinparam Actor {
-    BackgroundColor #F5F0F2
-    BorderColor #17468A
-    FontColor #E12D53
+    BackgroundColor #7AC3BA
+    BorderColor #7AC3BA
+    FontColor Black
     FontName Helvetica
     FontSize 30
     FontStyle Bold
@@ -175,16 +176,16 @@ skinparam Actor {
 
 skinparam Arrow {
     Thickness 3
-    Color #17468A
+    Color #356175
 }
 
 skinparam usecase {
-    BorderThickness 3
-    BackgroundColor #F5F0F2
-    BorderColor #17468A
-    FontColor #E12D53
+    BorderThickness 1
+    BackgroundColor #7AC3BA
+    BorderColor #7AC3BA
+    FontColor White
     FontName Helvetica
-    FontStyle Bold
+    FontStyle SemiBold
     FontSize 20
 }
 
